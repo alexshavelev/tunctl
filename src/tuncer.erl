@@ -315,7 +315,7 @@ terminate(_Reason, #state{fd = FD, dev = Dev, port = Port}) ->
     end,
     %%_ = tunctl:down(Dev),
     tunctl:persist(FD, false),
-    procket:close(FD),
+    %%procket:close(FD),
     ok.
 
 code_change(_OldVsn, State, _Extra) ->
