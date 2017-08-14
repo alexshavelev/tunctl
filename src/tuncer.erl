@@ -313,7 +313,7 @@ terminate(_Reason, #state{fd = FD, dev = Dev, port = Port}) ->
         true ->
             ok
     end,
-    %%_ = tunctl:down(Dev),
+    _ = tunctl:down(Dev),
     tunctl:persist(FD, false),
     %%procket:close(FD),
     ok.
