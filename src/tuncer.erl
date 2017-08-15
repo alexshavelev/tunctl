@@ -314,7 +314,7 @@ terminate(_Reason, #state{fd = FD, dev = Dev, port = Port}) ->
             ok
     end,
     _ = tunctl:down(Dev),
-    tunctl:persist(FD, false),
+    tunctl:persist(FD, true),
     procket:close(FD),
     ok.
 
